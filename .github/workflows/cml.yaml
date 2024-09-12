@@ -27,10 +27,10 @@ jobs:
           cat metrics.txt >> report.md
 
           # Publish feature importance and residuals plots in the report
-          cml-publish feature_importance.png --md >> report.md
-          cml-publish residuals.png --md >> report.md
+          # Use inline images instead of cml publish
+          echo "![Feature Importance](feature_importance.png)" >> report.md
+          echo "![Residuals](residuals.png)" >> report.md
 
-          # Send the report as a comment on the pull request or commit
-          cml-send-comment report.md
-
+          # Create a comment with the report
+          cml comment create report.md
            
