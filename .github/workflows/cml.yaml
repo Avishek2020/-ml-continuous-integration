@@ -23,7 +23,11 @@ jobs:
           echo "## MODEL METRICS" > report.md
           cat metrics.txt >> report.md
 
-          cml-publish features_importance.png --md >> report.md
+          # Publish feature importance and residuals plots in the report
+          cml-publish feature_importance.png --md >> report.md
           cml-publish residuals.png --md >> report.md
 
+          # Send the report as a comment on the pull request or commit
           cml-send-comment report.md
+
+           
