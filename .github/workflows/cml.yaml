@@ -17,7 +17,7 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: Train model
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Make sure the token is available
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # Make sure the token is available
         
         run: |
           # Your ML workflow goes here
